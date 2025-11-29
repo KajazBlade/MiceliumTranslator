@@ -2,7 +2,7 @@
 
 title: Soon Will Be On Site
 layout: splash
-permalink: /
+permalink: /will-be-soon
 
 header:
   overlay_color: #000
