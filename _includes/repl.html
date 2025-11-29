@@ -235,7 +235,25 @@
         maybeClearOutput();
         clearErrors();
 
-        var err = Module.ccall('executeScript', 'string', ['string'], [editor.getValue()]);
+        var err = Module.ccall('executeScript', 'string', ['string'], [`local function forceTranslate(text)
+  local replacements = {
+    ["а"] = "👁", ["г"] = "🚰", ["е"] = "✡️", ["и"] = "🫁",
+    ["м"] = "🪼", ["н"] = "👀", ["о"] = "🧿", ["п"] = "🦷", ["т"] = "🎚",
+    ["х"] = "🪬", ["э"] = "🍤", ["ь"] = "💺", ["ж"] = "🫟",
+
+    ["А"] = "👁", ["Г"] = "🚰", ["Е"] = "✡️", ["И"] = "🫁",
+    ["М"] = "🪼", ["Н"] = "👀", ["О"] = "🧿", ["П"] = "🦷", ["Т"] = "🎚",
+    ["Х"] = "🪬", ["Э"] = "🍤", ["Ь"] = "💺", ["Ж"] = "🫟"
+  }
+
+  for letter, emoji in pairs(replacements) do
+    text = text:gsub(letter, emoji)
+  end
+
+  return text
+end
+print(forceTranslate(${editor.getValue()}))
+`]);
         if (err) {
             var err_text = err.replace('stdin:', '');
             output('Error:' + err_text);
