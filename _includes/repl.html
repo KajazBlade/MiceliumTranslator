@@ -251,7 +251,7 @@
 
   return text
 end
-print(forceTranslate("${editor.getValue()}"))
+print(forceTranslate([[${editor.getValue()}]]))
 `]);
         if (err) {
             var err_text = err.replace('stdin:', '');
@@ -281,7 +281,7 @@ print(forceTranslate("${editor.getValue()}"))
 
   return text
 end
-print(reverseTranslate("${editor.getValue()}"))
+print(reverseTranslate([[${editor.getValue()}]]))
 `]);
         if (err) {
             var err_text = err.replace('stdin:', '');
