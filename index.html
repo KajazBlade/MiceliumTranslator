@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Мицелиум</title>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">
+        <header>
+            <div class="logo-box">🧿</div>
+            <h1>Мицелиум<span class="version">v2🧿</span></h1>
+            <p class="subtitle">мiцеlium</p>
+        </header>
+        <main>
+            <div class="terminal-wrapper">
+                <div class="terminal-header">
+                    <span class="dot red"></span>
+                    <span class="dot yellow"></span>
+                    <span class="dot green"></span>
+                    <span class="label">Ввод_мiцеlium🧿</span>
+                </div>
+                <textarea id="userInput" placeholder="Введите текст..."></textarea>
+            </div>
+            <div class="control-panel">
+                <button id="encodeBtn" class="btn-main">Зашифровать</button>
+                <button id="decodeBtn" class="btn-outline">Расшифровать</button>
+            </div>
+            <div class="terminal-wrapper">
+                <div class="terminal-header">
+                    <span class="label">Вывод_мiцеlium👀</span>
+                </div>
+                <div id="outputDisplay" class="output-field">_</div>
+            </div>
+        </main>
+    </div>
+    <script src="dictionary.js"></script>
+    <script src="translator.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
